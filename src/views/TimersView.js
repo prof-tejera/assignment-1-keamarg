@@ -21,7 +21,7 @@ const Timer = styled.div`
 
 const TimerTitle = styled.div``;
 
-function App() {
+const App = () => {
   const timers = [
     { title: "Stopwatch", C: <Stopwatch /> },
     { title: "Countdown", C: <Countdown /> },
@@ -31,14 +31,14 @@ function App() {
 
   return (
     <Timers>
-      {timers.map((timer) => (
-        <Timer>
+      {timers.map((timer, i) => (
+        <Timer key={i}>
           <TimerTitle>{timer.title}</TimerTitle>
           {timer.C}
         </Timer>
       ))}
     </Timers>
   );
-}
+};
 
 export default App;
