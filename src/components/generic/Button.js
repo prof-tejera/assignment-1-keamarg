@@ -23,6 +23,12 @@ const Btn = styled.button`
 `;
 
 const Button = (props) => {
+  Button.defaultProps = {
+    btnState: true,
+    settingsState: false,
+    styleName: "settingsBtn",
+    type: "Stopwatch",
+  };
   const changeBtnState = () => {
     props.type === "Reset"
       ? props.sendBtnState(true)
@@ -55,8 +61,10 @@ const Button = (props) => {
   );
 };
 Button.propTypes = {
-  btnType: PropTypes.bool,
+  btnState: PropTypes.bool,
+  settingsState: PropTypes.bool,
   styleName: PropTypes.string,
+  type: PropTypes.string,
 };
 
 export default Button;

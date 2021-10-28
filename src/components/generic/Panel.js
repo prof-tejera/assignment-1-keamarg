@@ -22,6 +22,9 @@ const Container = styled.div`
 `;
 
 const Panel = (props) => {
+  Panel.defaultProps = {
+    timerType: "Stopwatch",
+  };
   return (
     <Container type={props.timerType} className="mainPanel">
       {props.children}

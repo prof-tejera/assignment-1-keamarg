@@ -24,6 +24,13 @@ const Credentials = styled.p`
 `;
 
 const Settings = (props) => {
+  Settings.defaultProps = {
+    type: "Countdown",
+    timerType: "Countdown",
+    placeholder: "input",
+    placeholderRounds: "input",
+    placeholderRest: "input",
+  };
   return (
     <div className="w-75">
       {props.type !== "Stopwatch" ? (
@@ -52,8 +59,12 @@ const Settings = (props) => {
   );
 };
 
-// Panel.propTypes = {
-//   timerType: PropTypes.string,
-// };
+Settings.propTypes = {
+  type: PropTypes.string,
+  timerType: PropTypes.string,
+  placeholder: PropTypes.string,
+  placeholderRounds: PropTypes.string,
+  placeholderRest: PropTypes.string,
+};
 
 export default Settings;

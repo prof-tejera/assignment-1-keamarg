@@ -17,11 +17,16 @@ const Display = styled.label`
 `;
 
 const DisplayTime = (props) => {
-  const [time, setTime] = useState(props.time);
+  Display.defaultProps = {
+    styleName: "myClass",
+    time: "0",
+  };
+  const [time] = useState(props.time);
   return <Display className={props.styleName}>{time}</Display>;
 };
 Display.propTypes = {
   styleName: PropTypes.string,
+  time: PropTypes.string,
 };
 
 export default DisplayTime;
