@@ -2,6 +2,7 @@
   "name": "assignment-1",
   "version": "0.1.0",
   "private": true,
+"homepage": "https://prof-tejera.github.io/assignment-1-keamarg
   "dependencies": {
     "bootstrap-icons": "^1.6.1",
     "react": "^17.0.2",
