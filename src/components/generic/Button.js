@@ -5,11 +5,15 @@ import { COLORS } from "../../utils/helpers";
 
 const Btn = styled.button`
   border-radius: 0.3rem;
-  padding: 0.5rem;
+  // padding: 0.5rem;
   border: none;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: bold;
   color: ${COLORS.text};
+  transition: 0.2s ease;
+  :hover {
+    opacity: 0.6;
+  }
   background-color: ${(props) =>
     props.type === "Start"
       ? COLORS.start
@@ -19,17 +23,34 @@ const Btn = styled.button`
 `;
 
 const Button = (props) => {
+  const changeBtnState = () => {
+    props.type === "Reset"
+      ? props.sendBtnState(true)
+      : props.sendBtnState(!props.btnState);
+  };
+  const changeSettingsState = () => {
+    props.sendSettingsState(!props.settingsState);
+  };
   return (
     <Btn
       className={props.styleName}
       type={props.type}
-      onClick={() =>
-        props.type === "Reset"
-          ? props.sendBtnType(true)
-          : props.sendBtnType(!props.btnType)
-      }
+      onClick={() => {
+        changeBtnState();
+        if (props.styleName === "settingsBtn") {
+          changeSettingsState();
+        }
+      }}
     >
-      {props.type}
+      {props.type === "Reset" ? (
+        <i className="bi bi-arrow-counterclockwise"></i>
+      ) : props.type === "Start" ? (
+        <i className="bi bi-play-circle"></i>
+      ) : props.type === "Stop" ? (
+        <i className="bi bi-pause-circle"></i>
+      ) : props.styleName === "settingsBtn" ? (
+        <i className="bi bi-list"></i>
+      ) : null}
     </Btn>
   );
 };
