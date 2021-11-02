@@ -1,29 +1,26 @@
-# Assignment 1
+# Objective
+In this assignment, we will start using the foundation we lay in A1 and make our timers fully functional. Each timer will function as described in A1 and the user flow should be the following:
 
-## Objective
+- User opens the application
+- Select a type of timer (Stopwatch, Countdown, XY, TABATA)
 
-For Assignment 1 (A1) we are going to be building a component libary that we can use for future assignments. Our main goal is to layout the components that will be composed together to create our final bigger components. We will focus on composition, component interfaces, and styling. We aren't going to focus on functionality quite yet and at first our components will be very static.
+- Configure timer based on type (time, rounds, work/rest, etc)
 
-## What are we building?
+- Run timer. While running, user should be able to:
+  - Pause/Resume
+  - When paused, user can reset back to initial state
+  - Ability to "fast forward" (ends the timer)
 
-In the fitness world, there are lots of different ways a workout can be timed. For example, we can use a traditional stopwatch, a count-down timer, an interval timer, etc. To support our athletes, we’ll be building 4 different types of timers:
-
-| Timer type | Description                                                                                                                                                                                                                                                                               |
-| ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Stopwatch  | A timer that counts up to X amount of time (e.g. count up to 2 minutes and 30 seconds, starting at 0)                                                                                                                                                                                     |
-| Countdown  | A timer that counts down from X amount of time (e.g. count down to 0, starting at 2 minutes and 30)                                                                                                                                                                                       |
-| XY         | A timer that counts down from X time per round, for Y number of rounds (e.g. 1 minute for 10 minutes would count down from 1 minute to 0, then start another countdown, etc, 10 times )                                                                                                   |
-| TABATA     | An interval timer with work/rest periods. Example: 20s/10s, 8 rounds, would count down from 20 seconds to 0, then count down from 10 seconds to 0, then from 20, then from 10, etc, for 8 rounds. A full round includes both the work and rest. In this case, 20+10=30 seconds per round. |
-
-Our larger components are going to be `Stopwatch`, `Countdown`, `XY`, and `TABATA` (all of them are located in `src/components/timers`), but you can imagine that they have common functionality. An example is a start button. All timers are going to have to have a way to start. Our goal is to take these large components and extract common functionality into smaller components. We might have a `Button` component that is shared by all of our timers and it might have a prop that we pass in that changes the background color in order to create a start `Button` and a stop `Button`.
+- When timer is complete, you can decide how to congratulate the user and allow them to start over or select a different timer
 
 ## Deliverable
 
-1. Create generic components that are going to be used by your timers. The most basic ones, but not limited to, are going to be a `Button`, `Input`, `DisplayTime`, `DisplayRounds`, and `Panel` (that handles layout of your timer).
-2. Assemble your timers using the generic component library you have created. All timers should render at `localhost:3000`.
-3. Style your components in a way that they are consistent and look presentable. Do not use an existing UI design library (e.g. Google's Material UI or Antd), instead try to come up with your own. **You are welcome to search the internet for design inspiration, but make sure to cite all resources you have used.**
-4. Document all of the generic components you have created. In order to do this navigate to `src/view/Documentation` and add your components 1 by 1 with documentation of all props. We have provided an example loading spinner that you can follow.
-5. Deploy your application using any method you like (we will provide instructions for GH actions): https://prof-tejera.github.io/assignment-1-keamarg/
+- Convert all classes components that you have added to functional components. You are welcome to convert all components (including ones added by us), but this is not required.
+- Get all timers functional
+- Application state should be managed with context. That is, timers should NOT track time, rounds, etc, locally or pass it down to its children
+- Make sure that you can switch between timers without breaking the app (e.g. I should not have to refresh in order to run another timer after a run has been completed)
+- Update documentation as your components change. 
+- Your application must be deployed and the link pasted somewhere in this README
 
 ### Deployment Instructions (GH actions)
 
@@ -31,34 +28,31 @@ Our larger components are going to be `Stopwatch`, `Countdown`, `XY`, and `TABAT
 - Go to `Pages`
 - in `Source`, select `gh-pages` branch
 - Click Save
-- In `package.json`, add a new key/value as: `"homepage": "https://prof-tejera.github.io/<YOUR REPO NAME GOES HERE>"`
+- In `package.json`, add a new key/value as: `"homepage": "https://prof-tejera.github.io/<repo>"`
 
 Once the `build-deploy` action finishes running, the app should be live
-at `https://prof-tejera.github.io/<YOUR REPO NAME GOES HERE>`
+at `https://prof-tejera.github.io/<repo>`
 
 For other ways to deploy see https://github.com/prof-tejera/react-deployment-code
 
-## Grading rubric
+## Grading Rubric 
+- All components you have added are functional components
+- All timers are functioning properly 
+- Timers can be run one after another and it should not break the application
+- Application state is managed with context
+- DRY (do not repeat yourself). we should not see the same code copy pasted all over the codebase. 
+- Console is free of warnings/errors
 
-- All components are styled using the same method, with the exception of the components we created (e.g. views, App). We have used `styled-components`, but you don't have to.
-- UI is consistent and effort has been put into making it look nice. Cite any resources you used.
-- All generic components that you have created have been added `docs` and the PropType interfaces have been defined in each of component files.
-- Assemble all timers and render them. They for the most part should be static and not functional.
-- Keep your code as DRY (Don't repeat yourself) as possible
-- The console should be free of errors and warnings
+## Bonus
+For people looking for an additional challenge, we have provided some bonus features that you can implement. These are not required! You can still get a 100% on the assignment without them.
+- Before the timer starts, have a 10-second countdown to give user time to prepare (3pt)
+- User settings
+  - custom number of seconds before the timer starts (1pt)
+  - configurable audio notifications (3-2-1-GO, halfway, 1 minute left, last round, beep every minute, etc) (1pt)
+- Persisting state so refreshing the page does not clear application state. (2pt) 
 
-## Install and Run Project
+## Installing and Running the project
 
-Install project
+As you have noticed this repository is empty. To begin this assignment you must copy over all of our files from A1 into this repo. I recommend not copying over `node_modules` and instead re-install here. You can then commit and deploy as usual from this repo.
 
-```
-npm i
-```
 
-Run project
-
-```
-npm start
-```
-
-Assembled timers: `localhost:3000`. Documentation: `localhost:3000/docs`
