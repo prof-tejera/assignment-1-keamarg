@@ -68,6 +68,6 @@ Assembled timers: `localhost:3000`. Documentation: `localhost:3000/docs`
 - I used https://color.adobe.com/create/color-wheel to create a colorscheme, initially with the "split complimentary option", and then fine tuning until I was satisfied with the colors. I wanted a simple, minimalistic, but colorful app design, and took inspiration from different existing apps, as https://play.google.com/store/apps/details?id=cc.dreamspark.intervaltimer&hl=en.
 - I used Bootstrap for the layout and for timer icons.
 - I am importing Google fonts, but I am as of yet undecided whether I am going to use Google fonts in the final app.
-- Much of the code is unpolished, leading towards refactoring and cleaning up for. For instance the inputs are just placeholder, and I am going to work on DRY principles to clean up the timers, so they can use a common component in the for the bulk of the code.
+- Much of the code is unpolished, leading towards refactoring and cleaning up in A2. For instance the inputs are just placeholder, and I am going to work on DRY principles to clean up the timers, so they can use a common component for the bulk of the code.
 
 https://prof-tejera.github.io/assignment-1-keamarg
