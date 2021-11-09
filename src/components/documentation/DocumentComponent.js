@@ -27,22 +27,24 @@ const RenderComponent = styled.div`
 
 const Documentation = styled.table``;
 
-class DocumentComponent extends React.Component {
-  render() {
-    return (
-      <Wrapper>
-        <Title>{this.props.title}</Title>
-        <Container>
-          <RenderComponent>{this.props.component}</RenderComponent>
-          <Documentation>
+const DocumentComponent = (props) => {
+  return (
+    <Wrapper>
+      <Title>{props.title}</Title>
+      <Container>
+        <RenderComponent>{props.component}</RenderComponent>
+        <Documentation>
+          <tbody>
             <tr>
               <th>Prop</th>
               <th>Description</th>
               <th>Type</th>
               <th>Default value</th>
             </tr>
-            {this.props.propDocs.map((doc) => {
-              return (
+          </tbody>
+          {props.propDocs.map((doc, i) => {
+            return (
+              <tbody key={i}>
                 <tr>
                   <td>{doc.prop}</td>
                   <td>{doc.description}</td>
@@ -51,13 +53,13 @@ class DocumentComponent extends React.Component {
                     <code>{doc.defaultValue}</code>
                   </td>
                 </tr>
-              );
-            })}
-          </Documentation>
-        </Container>
-      </Wrapper>
-    );
-  }
-}
+              </tbody>
+            );
+          })}
+        </Documentation>
+      </Container>
+    </Wrapper>
+  );
+};
 
 export default DocumentComponent;

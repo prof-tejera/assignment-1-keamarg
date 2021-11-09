@@ -23,7 +23,7 @@ Our larger components are going to be `Stopwatch`, `Countdown`, `XY`, and `TABAT
 2. Assemble your timers using the generic component library you have created. All timers should render at `localhost:3000`.
 3. Style your components in a way that they are consistent and look presentable. Do not use an existing UI design library (e.g. Google's Material UI or Antd), instead try to come up with your own. **You are welcome to search the internet for design inspiration, but make sure to cite all resources you have used.**
 4. Document all of the generic components you have created. In order to do this navigate to `src/view/Documentation` and add your components 1 by 1 with documentation of all props. We have provided an example loading spinner that you can follow.
-5. Deploy your application using any method you like (we will provide instructions for GH actions): **URL_TO_APP**
+5. Deploy your application using any method you like (we will provide instructions for GH actions): **https://prof-tejera.github.io/assignment-1-keamarg**
 
 ### Deployment Instructions (GH actions)
 
@@ -45,7 +45,7 @@ For other ways to deploy see https://github.com/prof-tejera/react-deployment-cod
 - All generic components that you have created have been added `docs` and the PropType interfaces have been defined in each of component files.
 - Assemble all timers and render them. They for the most part should be static and not functional.
 - Keep your code as DRY (Don't repeat yourself) as possible
-- The console should be free of errors and  warnings
+- The console should be free of errors and warnings
 
 ## Install and Run Project
 
@@ -62,3 +62,12 @@ npm start
 ```
 
 Assembled timers: `localhost:3000`. Documentation: `localhost:3000/docs`
+
+## Assignment Notes
+
+- I used https://color.adobe.com/create/color-wheel to create a colorscheme, initially with the "split complimentary option", and then fine tuning until I was satisfied with the colors. I wanted a simple, minimalistic, but colorful app design, and took inspiration from different existing apps, as https://play.google.com/store/apps/details?id=cc.dreamspark.intervaltimer&hl=en.
+- I used Bootstrap for the layout and for timer icons.
+- I am importing Google fonts, but I am as of yet undecided whether I am going to use Google fonts in the final app.
+- Much of the code is unpolished, leading towards refactoring and cleaning up in A2. For instance the inputs are just placeholder, and I am going to work on DRY principles to clean up the timers, so they can use a common component for the bulk of the code.
+
+https://prof-tejera.github.io/assignment-1-keamarg
