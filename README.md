@@ -34,7 +34,7 @@ Our larger components are going to be `Stopwatch`, `Countdown`, `XY`, and `TABAT
 - In `package.json`, add a new key/value as: `"homepage": "https://prof-tejera.github.io/<YOUR REPO NAME GOES HERE>"`
 
 Once the `build-deploy` action finishes running, the app should be live
-at `https://prof-tejera.github.io/<YOUR REPO NAME GOES HERE>`
+at `https://prof-tejera.github.io/assignment-1-keamarg`
 
 For other ways to deploy see https://github.com/prof-tejera/react-deployment-code
 
